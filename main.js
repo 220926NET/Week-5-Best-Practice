@@ -1,8 +1,18 @@
-fetch('https://pokeapi.co/api/v2/pokemon-species/ditto')
-  .then((response) => response.json())
-  .then((data) => console.log(data.flavor_text_entries[0].flavor_text));
+function getPokemonData(pokeName) {
+  return new Promise((resolve) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokeName}`)
+      .then((response) => response.json())
+      .then((data) => resolve(data));
+  });
+}
 
 
-fetch('https://pokeapi.co/api/v2/pokemon-species/ditto')
-  .then((response) => response.json())
-  .then((data) => console.log(data.name));
+async function printPokemonData(pokeName) {
+  let promise = getPokemonData(pokeName);
+  let data = await promise;
+  element = document.getElementById("pokemon_name");
+  element.innerHTML = data.name;
+  console.log(data.name);
+}
+
+printPokemonData("ditto");
