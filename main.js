@@ -5,4 +5,4 @@ fetch('https://pokeapi.co/api/v2/pokemon-species/ditto')
 
 fetch('https://pokeapi.co/api/v2/pokemon-species/ditto')
   .then((response) => response.json())
-  .then((data) => console.log(data.pokemon.name));
+  .then((data) => console.log(data.name));
