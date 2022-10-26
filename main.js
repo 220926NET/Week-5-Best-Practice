@@ -78,10 +78,7 @@ async function main() {
 function setPokemonFields(pokeData) {
   document.getElementById("pokemonName").innerHTML = pokeData.Name;
   document.getElementById("pokemonType").innerHTML = pokeData.Type;
-  let img = document.createElement('img');
-  img.src = pokeData.Image;
-  img.id = "theImage";
-  document.getElementById("imageArea").appendChild(img);
+  document.getElementById("theImage").src = pokeData.Image;
   document.getElementById("pokeDesc").innerHTML = `NO: ${pokeData.Number} HT: ${pokeData.Height}  WT: ${pokeData.Weight} lbs.`;
   document.getElementById("move1Name").innerHTML = pokeData.Move1;
   document.getElementById("move1Description").innerHTML = pokeData.MoveText1;
