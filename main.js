@@ -69,7 +69,7 @@ async function printPokemonData(pokeName) {
 
 // Use as you would a main function
 async function main() {
-  let poke = await getPokemonCardData("charmander");
+  let poke = await getPokemonCardData("dialga");
   setPokemonFields(poke);
 }
 
