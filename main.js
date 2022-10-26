@@ -51,9 +51,9 @@ async function getPokemonCardData(pokeName) {
   // Do another api call for specific pokedex entry
   let sData = await getPokemonSpeciesData(pokeName);
   let entry = sData.flavor_text_entries[0].flavor_text;
-
+  let image = data.sprites.front_default;
   // Build the new model
-  let poke = new Pokemon(name, hp, type, number, height, weight, m1, m1t, m2, m2t, entry);
+  let poke = new Pokemon(name, hp, type, number, height, weight, m1, m1t, m2, m2t, entry, image);
 
   // return the new model
   return poke;
@@ -69,9 +69,24 @@ async function printPokemonData(pokeName) {
 
 // Use as you would a main function
 async function main() {
-  let poke = await getPokemonCardData("dialga");
-  element = document.getElementById("pokemon_name");
-  element.innerHTML = poke.Name;
-  console.log(poke);
+  let poke = await getPokemonCardData("charmander");
+  setPokemonFields(poke);
+}
+
+function setPokemonFields(pokeData)
+{
+  document.getElementById("pokemonName").innerHTML = pokeData.Name;
+  document.getElementById("pokemonType").innerHTML = pokeData.Type;
+  let img = document.createElement('img');
+  img.src = pokeData.Image;
+  img.id = "theImage";
+  document.getElementById("imageArea").appendChild(img);
+  document.getElementById("pokeDesc").innerHTML = `NO: ${pokeData.Number} HT: ${pokeData.Height}  WT: ${pokeData.Weight} lbs.`;
+  document.getElementById("move1Name").innerHTML = pokeData.Move1;
+  document.getElementById("move1Description").innerHTML = pokeData.MoveText1;
+  document.getElementById("move2Name").innerHTML = pokeData.Move2;
+  document.getElementById("move2Description").innerHTML = pokeData.MoveText2;
+  document.getElementById("PokeFlavorText").innerHTML = pokeData.Entry;
+
 }
 main();

@@ -1,5 +1,5 @@
 class Pokemon {
-  constructor(name, hp, type, number, height, weight, move1, moveText1, move2, moveText2, entry) {
+  constructor(name, hp, type, number, height, weight, move1, moveText1, move2, moveText2, entry, image) {
     this.Name = name;
     this.HP = hp;
     this.Type = type;
@@ -11,5 +11,6 @@ class Pokemon {
     this.Move2 = move2;
     this.MoveText2 = moveText2;
     this.Entry = entry;
+    this.Image = image;
   }
 }
