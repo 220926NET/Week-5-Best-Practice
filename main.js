@@ -1,17 +1,3 @@
-class Pokemon {
-  constructor(name, hp, type, number, height, weight, move1, move2, entry) {
-    this.Name = name;
-    this.HP = hp;
-    this.Type = type;
-    this.Number = number;
-    this.Height = height;
-    this.Weight = weight;
-    this.Move1 = move1;
-    this.Move2 = move2;
-    this.Entry = entry;
-  }
-}
-
 function getPokemonData(pokeName) {
   return new Promise((resolve) => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
@@ -29,8 +15,11 @@ function getPokemonSpeciesData(pokeName) {
 }
 
 async function getPokemonCardData(pokeName) {
+  // Next two lines get the pokemon's data
   let promise = getPokemonData(pokeName);
   let data = await promise;
+
+  // Next 13 lines get all the nessasary stuff for a pokemon
   let name = data.name;
   let hp = data.stats[0].base_stat; // Not the correct stat yet... cant find consistent spot for hp
   let type = data.types[0].type.name;
@@ -46,9 +35,14 @@ async function getPokemonCardData(pokeName) {
     m2 = data.moves[1].move.name;
   }
 
+  // Do another api call for specific pokedex entry
   let sData = await getPokemonSpeciesData(pokeName);
   let entry = sData.flavor_text_entries[0].flavor_text;
+
+  // Build the new model
   let poke = new Pokemon(name, hp, type, number, height, weight, m1, m2, entry);
+
+  // return the new model
   return poke;
 }
 
@@ -60,6 +54,7 @@ async function printPokemonData(pokeName) {
   console.log(data.name);
 }
 
+// Use as you would a main function
 async function main() {
   console.log(await getPokemonCardData("ditto"));
 }
