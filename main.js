@@ -91,6 +91,7 @@ function setPokemonFields(pokeData)
   document.getElementById("PokeFlavorText").innerHTML = pokeData.Entry;
   document.getElementById("pokemonHP").innerHTML = `HP ${pokeData.HP} `;
   // document.getElementById("cardBorder").style.backgroundColor = "blue";
+  pokeData.Type = pokeData.Type.toLowerCase();
   if(pokeData.Type == 'fire'){
     document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, red, yellow)";
   }else if(pokeData.Type == 'normal'){
@@ -108,7 +109,7 @@ function setPokemonFields(pokeData)
   }else if(pokeData.Type == 'poison'){
     
   }else if(pokeData.Type == 'ground'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, grey, normal)";
   }else if(pokeData.Type == 'flying'){
     
   }else if(pokeData.Type == 'psychic'){
@@ -116,19 +117,19 @@ function setPokemonFields(pokeData)
   }else if(pokeData.Type == 'bug'){
     
   }else if(pokeData.Type == 'rock'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, brown, burlywood)";
   }else if(pokeData.Type == 'ghost'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, purple, plum)";
   }else if(pokeData.Type == 'dark'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, #333, #888)";
   }else if(pokeData.Type == 'dragon'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, purple, lavender)";
   }else if(pokeData.Type == 'steel'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, grey, white)";
   }else if(pokeData.Type == 'fairy'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, pink, white)";
   }else{
-
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, grey, white)";
   }
 
 }
