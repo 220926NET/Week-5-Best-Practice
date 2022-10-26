@@ -29,7 +29,8 @@ async function getPokemonCardData(pokeName) {
 
   // Next 13 lines get all the nessasary stuff for a pokemon
   let name = data.name;
-  let hp = data.stats[0].base_stat; // Not the correct stat yet... cant find consistent spot for hp
+  let hp = Math.floor(Math.random() * (340 - 30)) + 30; // Can be a number between 30 and 340
+  hp = hp - (hp % 10); // Number must be a multiple of 10
   let type = data.types[0].type.name;
   let number = data.id;
   let height = data.height;
