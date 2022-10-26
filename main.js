@@ -90,5 +90,46 @@ function setPokemonFields(pokeData)
   document.getElementById("move2Description").innerHTML = pokeData.MoveText2;
   document.getElementById("PokeFlavorText").innerHTML = pokeData.Entry;
   document.getElementById("pokemonHP").innerHTML = `HP ${pokeData.HP} `;
+  // document.getElementById("cardBorder").style.backgroundColor = "blue";
+  if(pokeData.Type == 'fire'){
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, red, yellow)";
+  }else if(pokeData.Type == 'normal'){
+
+  }else if(pokeData.Type == 'water'){
+    
+  }else if(pokeData.Type == 'grass'){
+    
+  }else if(pokeData.Type == 'electric'){
+    
+  }else if(pokeData.Type == 'ice'){
+    
+  }else if(pokeData.Type == 'fighting'){
+    
+  }else if(pokeData.Type == 'poison'){
+    
+  }else if(pokeData.Type == 'ground'){
+    
+  }else if(pokeData.Type == 'flying'){
+    
+  }else if(pokeData.Type == 'psychic'){
+    
+  }else if(pokeData.Type == 'bug'){
+    
+  }else if(pokeData.Type == 'rock'){
+    
+  }else if(pokeData.Type == 'ghost'){
+    
+  }else if(pokeData.Type == 'dark'){
+    
+  }else if(pokeData.Type == 'dragon'){
+    
+  }else if(pokeData.Type == 'steel'){
+    
+  }else if(pokeData.Type == 'fairy'){
+    
+  }else{
+
+  }
+
 }
 
