@@ -14,6 +14,14 @@ function getPokemonSpeciesData(pokeName) {
   });
 }
 
+function getPokemonMoveFlavorText(moveName) {
+  return new Promise((resolve) => {
+    fetch(`https://pokeapi.co/api/v2/move/${moveName}`)
+      .then((response) => response.json())
+      .then((data) => resolve(data.flavor_text_entries[0].flavor_text));
+  });
+}
+
 async function getPokemonCardData(pokeName) {
   // Next two lines get the pokemon's data
   let promise = getPokemonData(pokeName);
@@ -27,12 +35,16 @@ async function getPokemonCardData(pokeName) {
   let height = data.height;
   let weight = data.weight;
   let m1 = null;
+  let m1t = null
   let m2 = null;
+  let m2t = null;
   if (data.moves[0] != null) {
     m1 = data.moves[0].move.name;
+    m1t = await getPokemonMoveFlavorText(m1);
   }
   if (data.moves[1] != null) {
     m2 = data.moves[1].move.name;
+    m2t = await getPokemonMoveFlavorText(m2)
   }
 
   // Do another api call for specific pokedex entry
@@ -40,7 +52,7 @@ async function getPokemonCardData(pokeName) {
   let entry = sData.flavor_text_entries[0].flavor_text;
 
   // Build the new model
-  let poke = new Pokemon(name, hp, type, number, height, weight, m1, m2, entry);
+  let poke = new Pokemon(name, hp, type, number, height, weight, m1, m1t, m2, m2t, entry);
 
   // return the new model
   return poke;
