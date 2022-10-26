@@ -11,7 +11,25 @@
 
 <body>
     <h1 id="pokemon_name">Hello World</h1>
-    <script src="Models/Pokemon.js"></script>
+    <div class = "cardContainer">
+        <div class = "cardBorder">
+            <div class="topHalf">
+                <section class="pokemonName">Pokemon Name</section>
+                <section class="imageArea"></section>
+                <section class="pokeDesc"></section>
+            </div>
+            <div class="bottomHalf">
+                <section class="pokeMove"></section>
+                <section class="threePartSection">
+                    <div #pokeStrngth></div>
+                    <div #pokeWeakenss></div>
+                    <div #pokeLocation></div>
+                </section>
+                <section class="PokeFlavorText"></section>
+            </div>
+        </div>
+    </div>
+    <script src="Model/Pokemon.js"></script>
     <script src="main.js"></script>
 </body>
 
