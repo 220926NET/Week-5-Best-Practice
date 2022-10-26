@@ -56,6 +56,9 @@ async function printPokemonData(pokeName) {
 
 // Use as you would a main function
 async function main() {
-  console.log(await getPokemonCardData("ditto"));
+  var poke = await getPokemonCardData("dialga");
+  element = document.getElementById("pokemon_name");
+  element.innerHTML = poke.Name;
+  console.log(poke);
 }
 main();
