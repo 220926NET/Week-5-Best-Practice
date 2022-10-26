@@ -94,15 +94,15 @@ function setPokemonFields(pokeData)
   if(pokeData.Type == 'fire'){
     document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, red, yellow)";
   }else if(pokeData.Type == 'normal'){
-
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, brown, tan)";
   }else if(pokeData.Type == 'water'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, blue, lightblue)";
   }else if(pokeData.Type == 'grass'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, darkgreen, lightgreen)";
   }else if(pokeData.Type == 'electric'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, yellow, lightyellow)";
   }else if(pokeData.Type == 'ice'){
-    
+    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, lightblue, white)";
   }else if(pokeData.Type == 'fighting'){
     
   }else if(pokeData.Type == 'poison'){
