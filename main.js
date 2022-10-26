@@ -69,7 +69,9 @@ async function printPokemonData(pokeName) {
 
 // Use as you would a main function
 async function main() {
-  let poke = await getPokemonCardData("dialga");
+  let name = document.getElementById("pokeInput").value;
+  console.log(name);
+  let poke = await getPokemonCardData(name);
   setPokemonFields(poke);
 }
 
@@ -89,4 +91,4 @@ function setPokemonFields(pokeData)
   document.getElementById("PokeFlavorText").innerHTML = pokeData.Entry;
   document.getElementById("pokemonHP").innerHTML = `HP ${pokeData.HP} `;
 }
-main();
+
