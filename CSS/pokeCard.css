@@ -22,11 +22,16 @@
 }
 #pokemonName{
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 #titleLeftArea{
     display:flex;
     gap: 5px;
+}
+
+#pokemonType{
+    text-transform: capitalize;
 }
 #pokemonHP{
     color: rgb(143, 5, 5);
@@ -79,10 +84,12 @@
 
 #move1Name{
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 #move2Name{
     font-weight: bold;
+    text-transform: capitalize;
 }
 .pokemonCardTitleArea{
     margin: 5px 20px 0px 12px;
