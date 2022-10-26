@@ -87,6 +87,6 @@ function setPokemonFields(pokeData)
   document.getElementById("move2Name").innerHTML = pokeData.Move2;
   document.getElementById("move2Description").innerHTML = pokeData.MoveText2;
   document.getElementById("PokeFlavorText").innerHTML = pokeData.Entry;
-
+  document.getElementById("pokemonHP").innerHTML = `HP ${pokeData.HP} `;
 }
 main();
