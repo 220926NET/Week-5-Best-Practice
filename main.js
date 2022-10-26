@@ -75,8 +75,7 @@ async function main() {
   setPokemonFields(poke);
 }
 
-function setPokemonFields(pokeData)
-{
+function setPokemonFields(pokeData) {
   document.getElementById("pokemonName").innerHTML = pokeData.Name;
   document.getElementById("pokemonType").innerHTML = pokeData.Type;
   let img = document.createElement('img');
@@ -92,31 +91,37 @@ function setPokemonFields(pokeData)
   document.getElementById("pokemonHP").innerHTML = `HP ${pokeData.HP} `;
   // document.getElementById("cardBorder").style.backgroundColor = "blue";
   pokeData.Type = pokeData.Type.toLowerCase();
-  if(pokeData.Type == 'fire'){
-    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, red, yellow)";
-  }else if(pokeData.Type == 'normal'){
-
-  }else if(pokeData.Type == 'water'){
-    
-  }else if(pokeData.Type == 'grass'){
-    
-  }else if(pokeData.Type == 'electric'){
-    
-  }else if(pokeData.Type == 'ice'){
-    
-  }else if(pokeData.Type == 'fighting'){
-    
-  }else if(pokeData.Type == 'poison'){
-    
-  }else if(pokeData.Type == 'ground'){
-    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, grey, normal)";
-  }else if(pokeData.Type == 'flying'){
-    
-  }else if(pokeData.Type == 'psychic'){
-    
-  }else if(pokeData.Type == 'bug'){
-    
-  }else if(pokeData.Type == 'rock'){
+  if (pokeData.Type == 'fire') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, red, yellow)";
+  } else if (pokeData.Type == 'normal') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, brown, tan)";
+  } else if (pokeData.Type == 'water') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, blue, lightblue)";
+  } else if (pokeData.Type == 'grass') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, darkgreen, lightgreen)";
+  } else if (pokeData.Type == 'electric') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, yellow, lightyellow)";
+  } else if (pokeData.Type == 'ice') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, lightblue, white)";
+  } else if (pokeData.Type == 'fighting') {
+    // machamp
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, #C22E28, white)";
+  } else if (pokeData.Type == 'poison') {
+    // arbok
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, #A33EA1, white)";
+  } else if (pokeData.Type == 'ground') {
+    // diglett
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, #E2BF65, white)";
+  } else if (pokeData.Type == 'flying') {
+    // starly
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, #A98FF3, white)";
+  } else if (pokeData.Type == 'psychic') {
+    // abra
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, #F95587, white)";
+  } else if (pokeData.Type == 'bug') {
+    // weedle
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, #A6B91A, white)";
+  } else if (pokeData.Type == 'rock') {
     document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, brown, burlywood)";
   }else if(pokeData.Type == 'ghost'){
     document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, purple, plum)";
