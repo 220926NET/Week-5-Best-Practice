@@ -75,6 +75,12 @@ async function main() {
   setPokemonFields(poke);
 }
 
+async function startup() {
+  let poke = await getPokemonCardData("pikachu");
+  setPokemonFields(poke);
+}
+startup();
+
 function setPokemonFields(pokeData) {
   document.getElementById("pokemonName").innerHTML = pokeData.Name;
   document.getElementById("pokemonType").innerHTML = pokeData.Type;
@@ -119,19 +125,19 @@ function setPokemonFields(pokeData) {
     // weedle
     document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, #A6B91A, white)";
   } else if (pokeData.Type == 'rock') {
-    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, brown, burlywood)";
-  }else if(pokeData.Type == 'ghost'){
-    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, purple, plum)";
-  }else if(pokeData.Type == 'dark'){
-    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, #333, #888)";
-  }else if(pokeData.Type == 'dragon'){
-    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, purple, lavender)";
-  }else if(pokeData.Type == 'steel'){
-    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, grey, white)";
-  }else if(pokeData.Type == 'fairy'){
-    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, pink, white)";
-  }else{
-    document.getElementById("cardBorder").style.backgroundImage =  "linear-gradient(to bottom right, grey, white)";
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, brown, burlywood)";
+  } else if (pokeData.Type == 'ghost') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, purple, plum)";
+  } else if (pokeData.Type == 'dark') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, #333, #888)";
+  } else if (pokeData.Type == 'dragon') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, purple, lavender)";
+  } else if (pokeData.Type == 'steel') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, grey, white)";
+  } else if (pokeData.Type == 'fairy') {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, pink, white)";
+  } else {
+    document.getElementById("cardBorder").style.backgroundImage = "linear-gradient(to bottom right, grey, white)";
   }
 
 }
